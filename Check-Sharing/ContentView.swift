@@ -36,7 +36,7 @@ struct ContentView: View {
                     Text("Hello, world!")
                 }
             }
-            
+            .navigationBarTitle("SwiftUI")
         }
     }
 }
