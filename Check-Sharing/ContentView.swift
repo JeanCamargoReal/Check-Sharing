@@ -28,6 +28,20 @@ struct ContentView: View {
                         }
                     }
                 }
+                
+                Section {
+                    Picker("Tip percentage", selection: $tipPercentage) {
+                        ForEach(tipPercentages, id: \.self) {
+                            if #available(iOS 15.0, *) {
+                                Text($0, format: .percent)
+                            }
+                        }
+                    }
+                    .pickerStyle(.segmented)
+                } header: {
+                    Text("How much tip do yoy want to leave?")
+                }
+                
                 Section {
                     Text("$\(checkAmount)")
                 }
